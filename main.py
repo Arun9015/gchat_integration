@@ -21,7 +21,8 @@ def main():
         "text" : message
     }
     # response = requests.post(GCHAT_WEBHOOK_URL, json=payload)
-    print(response)
+    # print(response)
+    print("workflow is working")
 
 if __name__ == "__main__":
     main()

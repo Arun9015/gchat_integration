@@ -1,7 +1,6 @@
 name: testing
+
 on:
-  # pull_request:
-  #   types: [opened, edited, reopened]
   issue_comment:
     types:
       - created
@@ -14,3 +13,7 @@ jobs:
       - run: echo "event name is:" ${{ github.event_name }} 
       - run: echo "event type is:" ${{ github.event.action }} 
       - run: echo "Event name:" $GITHUB_EVENT_NAME
+
+
+        # pull_request:
+  #   types: [opened, edited, reopened]
