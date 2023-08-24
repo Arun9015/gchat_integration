@@ -2,8 +2,6 @@ name: testing
 
 on:
   issue_comment:
-    types:
-      - created
     
 
 jobs:
