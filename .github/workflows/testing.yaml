@@ -1,6 +1,7 @@
 name: testing
 on:
-  pull_request:
+  # pull_request:
+  #   types: [opened, edited, reopened]
   issue_comment:
     
 
