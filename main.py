@@ -19,6 +19,8 @@ def main():
     set_message = {
         "opened": f"New Pull Request:\nTitle: {pr.title}\nURL: {pr.html_url}",
         "edited": f"Pull Request Edited:\nTitle: {pr.title}\nURL: {pr.html_url}",
+        "closed": f"Pull Request Closed:\nTitle: {pr.title}\nURL: {pr.html_url}",
+        "reopened": f"Pull Request Reopened:\nTitle: {pr.title}\nURL: {pr.html_url}",
         # Add more cases as needed
     }
 

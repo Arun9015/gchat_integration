@@ -2,7 +2,7 @@ name: check if notification is sent to gchat
 
 on:
   pull_request:
-    types: [opened, edited, reopened]
+    types: [opened, edited, reopened , closed]
   issue_comment:
 
 permissions: write-all
@@ -14,10 +14,10 @@ env:
   EVENT: ${{ github.event.action }} 
  
 jobs:
-  Check-PR:
+  Google-Chat-Integration:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Check PR Description and Target
+      - name: Google Chat Integration
         uses: ./   
