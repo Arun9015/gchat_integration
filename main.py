@@ -14,28 +14,28 @@ print(GCHAT_WEBHOOK_URL)
 # Google Chat webhook URL
 # GCHAT_WEBHOOK_URL = "https://chat.googleapis.com/v1/spaces/AAAAJWnA1jA/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=pfdOLCmNOvrazVV-IkSORjSpmfOs9Kpay03eCZD5xww"
 
-def main():
-    pr_number = int(os.environ['PR_NUMBER'])
-    pr = repo.get_pull(pr_number)
-    message = f"An Event is created on PR:\nTitle: {pr.title}\nURL: {pr.html_url}"
+# def main():
+#     pr_number = int(os.environ['PR_NUMBER'])
+#     pr = repo.get_pull(pr_number)
+#     message = f"An Event is created on PR:\nTitle: {pr.title}\nURL: {pr.html_url}"
 
-    set_message = {
-        "opened": f"New Pull Request:\nTitle: {pr.title}\nURL: {pr.html_url}",
-        "edited": f"Pull Request Edited:\nTitle: {pr.title}\nURL: {pr.html_url}",
-        "closed": f"Pull Request Closed:\nTitle: {pr.title}\nURL: {pr.html_url}",
-        "reopened": f"Pull Request Reopened:\nTitle: {pr.title}\nURL: {pr.html_url}",
-        # Add more cases as needed
-    }
+#     set_message = {
+#         "opened": f"New Pull Request:\nTitle: {pr.title}\nURL: {pr.html_url}",
+#         "edited": f"Pull Request Edited:\nTitle: {pr.title}\nURL: {pr.html_url}",
+#         "closed": f"Pull Request Closed:\nTitle: {pr.title}\nURL: {pr.html_url}",
+#         "reopened": f"Pull Request Reopened:\nTitle: {pr.title}\nURL: {pr.html_url}",
+#         # Add more cases as needed
+#     }
 
-    message = set_message.get(event, message)
+#     message = set_message.get(event, message)
     
-    payload = {
-        "text" : message
-    }
+#     payload = {
+#         "text" : message
+#     }
 
-    response = requests.post(GCHAT_WEBHOOK_URL, json=payload)
-    print(response)
-    print(event)
+#     response = requests.post(GCHAT_WEBHOOK_URL, json=payload)
+#     print(response)
+#     print(event)
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     main()

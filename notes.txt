@@ -1,0 +1,8 @@
+send notification events
+    -> on pr 
+        -> opened
+        -> edited
+        -> closed
+        -> reopened
+    -> event
+        -> comment on pr
