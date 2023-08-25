@@ -5,11 +5,12 @@ import requests
 g = Github(os.environ["GITHUB_TOKEN"])
 repo = g.get_repo(os.environ['REPO_NAME'])
 event = os.environ['EVENT']
+GCHAT_WEBHOOK_URL = os.environ['WEBHOOK']
 # GitHub token with appropriate permissions
 # GITHUB_TOKEN = "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"
 
 # Google Chat webhook URL
-GCHAT_WEBHOOK_URL = "https://chat.googleapis.com/v1/spaces/AAAAJWnA1jA/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=pfdOLCmNOvrazVV-IkSORjSpmfOs9Kpay03eCZD5xww"
+# GCHAT_WEBHOOK_URL = "https://chat.googleapis.com/v1/spaces/AAAAJWnA1jA/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=pfdOLCmNOvrazVV-IkSORjSpmfOs9Kpay03eCZD5xww"
 
 def main():
     pr_number = int(os.environ['PR_NUMBER'])
