@@ -6,6 +6,8 @@ g = Github(os.environ["GITHUB_TOKEN"])
 repo = g.get_repo(os.environ['REPO_NAME'])
 event = os.environ['EVENT']
 GCHAT_WEBHOOK_URL = os.environ['WEBHOOK']
+print(os.environ['WEBHOOK'])
+print(GCHAT_WEBHOOK_URL)
 # GitHub token with appropriate permissions
 # GITHUB_TOKEN = "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"
 
