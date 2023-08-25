@@ -14,15 +14,22 @@ GCHAT_WEBHOOK_URL = "https://chat.googleapis.com/v1/spaces/AAAAJWnA1jA/messages?
 def main():
     pr_number = int(os.environ['PR_NUMBER'])
     pr = repo.get_pull(pr_number)
+    message = f"An Event is created on PR:\nTitle: {pr.title}\nURL: {pr.html_url}"
 
+    set_message = {
+        "opened": f"New Pull Request:\nTitle: {pr.title}\nURL: {pr.html_url}",
+        "edited": f"Pull Request Edited:\nTitle: {pr.title}\nURL: {pr.html_url}",
+        # Add more cases as needed
+    }
 
-    message = f"New Pull Request:\nTitle: {pr.title}\nURL: {pr.html_url}"
+    message = set_message.get(event, message)
+    
     payload = {
         "text" : message
     }
-    # response = requests.post(GCHAT_WEBHOOK_URL, json=payload)
-    # print(response)
-    print("workflow is working")
+
+    response = requests.post(GCHAT_WEBHOOK_URL, json=payload)
+    print(response)
     print(event)
 
 if __name__ == "__main__":
