@@ -23,6 +23,7 @@ def main():
     # response = requests.post(GCHAT_WEBHOOK_URL, json=payload)
     # print(response)
     print("workflow is working")
+    print(event)
 
 if __name__ == "__main__":
     main()
