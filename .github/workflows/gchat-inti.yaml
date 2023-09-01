@@ -22,4 +22,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Google Chat Integration
-        uses: ./   
+        uses: imp-ress-ico/github-actions@devops/i53T3nLb/1775
